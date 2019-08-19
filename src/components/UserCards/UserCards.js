@@ -12,7 +12,9 @@ class UserCards extends React.Component {
   state = {
     users: [],
     visibleModal: false,
-    userModal: []
+    userModal: [],
+    error: [],
+    registeredUser: []
   };
   getUsers = async () => {
     await api
