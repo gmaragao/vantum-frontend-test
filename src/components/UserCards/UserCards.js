@@ -1,6 +1,8 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import ReactDOM from 'react-dom';
+import CustomModal from '../CustomModal/CustomModal';
+
 import api from '../../services/api';
 
 import { Card, Icon, Avatar } from 'antd';
@@ -8,7 +10,9 @@ const { Meta } = Card;
 
 class UserCards extends React.Component {
   state = {
-    users: []
+    users: [],
+    visibleModal: false,
+    userModal: []
   };
   getUsers = async () => {
     await api
@@ -62,7 +66,12 @@ class UserCards extends React.Component {
         console.log(error);
       });
   };
+  handleEdit = async (e, user) => {
+    await this.setState({ visibleModal: true, userModal: user });
 
+    console.log(user);
+    console.log(this.state.visibleModal);
+  };
   render() {
     return (
       <div>
@@ -80,13 +89,13 @@ class UserCards extends React.Component {
                 type="delete"
                 key="delete"
                 onClick={e => this.handleDelete(e, user)}
-                value={user.id}
+                value={user._id}
               />,
               <Icon
                 type="edit"
                 key="edit"
                 onClick={e => this.handleEdit(e, user)}
-                value={user.id}
+                value={user._id}
               />
             ]}
           >
@@ -99,6 +108,10 @@ class UserCards extends React.Component {
             />
           </Card>
         ))}
+        <CustomModal
+          userModal={this.state.userModal}
+          visibleModal={this.state.visibleModal}
+        />
       </div>
     );
   }
