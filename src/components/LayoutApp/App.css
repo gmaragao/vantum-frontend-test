@@ -1,0 +1,75 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #001529;
+}
+
+body,
+input,
+button {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.gif {
+  display: absolute;
+  border: 2px solid #001529;
+  border-radius: 10%;
+  float: right;
+  width: 40vh;
+  height: 35vh;
+}
+
+.vantum-logo {
+  width: 100%;
+  height: 100%;
+}
+
+.logo {
+  width: 10vw;
+  height: 8vh;
+  float: left;
+  margin: 0px 24px 16px 0;
+}
+
+@media only screen and (min-width: 900px) {
+  .menu-links {
+    float: right;
+    width: 20rem;
+    background: #001529;
+    border-radius: 2%;
+    line-height: 60px;
+    color: #f5f5f5f5;
+  }
+}
+.logo {
+  width: 10rem;
+  height: 3rem;
+  float: left;
+}
+
+@media only screen and (max-width: 899px) {
+  .menu-links {
+    float: right;
+    width: 4rem;
+    font-size: 1rem;
+    background: #001529;
+    border-radius: 2%;
+    line-height: 60px;
+    color: #f5f5f5f5;
+  }
+}
+
+.footer {
+  background-color: #001529;
+  color: #f5f5f5f5;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.container img {
+  float: right;
+}
